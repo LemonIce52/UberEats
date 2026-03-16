@@ -1,0 +1,449 @@
+/* styles.css */
+/* ===================== БАЗОВЫЕ СТИЛИ ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.4;
+    color: #333;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* ===================== КОНТЕЙНЕР ===================== */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================== TOP BAR ===================== */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.uber { color: #00A082; }
+.eats { color: #111; }
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.login-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #222;
+    padding: 10px 28px;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    background: #f5f5f5;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: rgba(255,255,255,0.95);
+    padding: 28px 32px;
+    border-radius: 12px;
+    max-width: 320px;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.restaurant-card h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.cuisine {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.time-badge {
+    background: #000;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.business-card {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 2;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 180px;
+}
+
+/* ===================== CATEGORIES ===================== */
+.categories-nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 12px 0;
+    scrollbar-width: none;
+}
+
+.category-list {
+    display: flex;
+    gap: 32px;
+    padding: 0 20px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.category-list a:hover,
+.category-list a.active {
+    color: #00cc66;
+}
+
+.category-list a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #00cc66;
+}
+
+/* ===================== MENU ===================== */
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    background: #f8f8f8;
+}
+
+.section-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+    padding-left: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: stretch;
+    transition: transform 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+}
+
+.item-text {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-text h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.item-text p {
+    color: #666;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-top: auto;
+}
+
+.item-image {
+    width: 180px;
+    flex-shrink: 0;
+    background: #f5f5f5;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+    background: #1C1C1C;
+    color: white;
+    margin-top: 80px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+}
+
+.footer-logo .eats { color: white; }
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.footer-left .language-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #333;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.language-select select {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.social a {
+    font-size: 24px;
+    margin-right: 20px;
+    opacity: 0.8;
+}
+
+.social a:hover { opacity: 1; }
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.column a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.column a:hover {
+    color: #00A082;
+}
+
+.app-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.app-buttons img {
+    height: 48px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 13px;
+    color: #777;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom span {
+    cursor: pointer;
+}
+
+.footer-bottom span:hover {
+    color: #00A082;
+}
+
+.scroll-top {
+    background: #00A082;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+/* ===================== АДАПТИВНОСТЬ ===================== */
+
+/* ПЛАНШЕТ */
+@media (max-width: 1024px) {
+    .hero {
+        height: 360px;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 350px);
+    }
+
+    .header-container,
+    .search-bar,
+    .main-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* МОБИЛЬНЫЙ */
+@media (max-width: 800px) {
+    .menu-grid {
+        grid-template-columns: 250px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .item-image {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .hero-overlay {
+        left: 20px;
+        top: 20px;
+        max-width: 280px;
+        padding: 20px;
+    }
+    
+    .business-card {
+        right: 20px;
+        top: 20px;
+        width: 140px;
+    }
+    
+    .category-list {
+        padding: 0 10px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .header-container {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 300px;
+    }
+    .restaurant-card h1 {
+        font-size: 26px;
+    }
+}
